@@ -4,7 +4,7 @@ Integrates with [brittany](https://github.com/lspitzner/brittany) so every time
 you save a Haskell source file it gets automatically prettified.
 
 Simply using `:%!brittany` replaces your whole source file with an error message
-from **brittany** when you happen to have a syntax error in your code, this
+from **brittany** when you happen to have a syntax error in your code. This
 plugin manages that annoyance.
 
 _Note:_ If you prefer _hindent_ use
