@@ -1,55 +1,60 @@
-# vim-hindent
+# vim-brittany
 
-Integrates with [hindent](https://github.com/chrisdone/hindent) so every time
+Integrates with [brittany](https://github.com/lspitzner/brittany) so every time
 you save a Haskell source file it gets automatically prettified.
 
-Simply using `:%!hindent` replaces your whole source file with an error message
-from **hindent** when you happen to have a syntax error in your code, this
+Simply using `:%!brittany` replaces your whole source file with an error message
+from **brittany** when you happen to have a syntax error in your code, this
 plugin manages that annoyance.
 
-*Note:* If you prefer *stylish-haskell* use
+_Note:_ If you prefer _hindent_ use
+[vim-hindent](https://github.com/alx741/vim-hindent) instead.
+_Note:_ If you prefer _stylish-haskell_ use
 [vim-stylishask](https://github.com/alx741/vim-stylishask) instead.
 
 ## Installation
 
 Compatible with `Vundle`, `Pathogen`, `Vim-plug`.
 
-
 ## Usage
 
-By default, *vim-hindent* will format your code automatically when saving a
-Haskell source file, but you can use the `:Hindent` command at any time to
+By default, _vim-brittany_ will format your code automatically when saving a
+Haskell source file, but you can use the `:Brittany` command at any time to
 format the current file.
 
-To apply *hindent* on a range, either write the range manually or visually
-select the desired code and then invoke `:Hindent`.
+To apply _brittany_ on a range, either write the range manually or visually
+select the desired code and then invoke `:Brittany`.
 
-Use `:HindentEnable`, `:HindentDisable`, `:HindentToggle` to enable, disable, or
-toggle running `hindent` on save.
-
+Use `:BrittanyEnable`, `:BrittanyDisable`, `:BrittanyToggle` to enable, disable, or
+toggle running `brittany` on save.
 
 ## Configuration
 
-Trigger *hindent* when saving (default = 1):
+Trigger _brittany_ when saving (default = 1):
 
 ```vim
-g:hindent_on_save = 1
+g:brittany_on_save = 1
 ```
 
-Number of spaces per indentation (default = '', uses `hindent` default of 2):
+Number of spaces per indentation (default = '', uses `brittany` default of 2):
 
 ```vim
-g:hindent_indent_size = 2
+g:brittany_indent = 2
 ```
 
-Max line length (default = `''`, uses `hindent` default of 80):
+Max line length (default = `''`, uses `brittany` default of 80):
 
 ```vim
-g:hindent_line_length = 100
+g:brittany_columns = 100
 ```
 
-Specify the path to the hindent executable (for example if you installed hindent with `stack build --copy-compiler-tool hindent`)
+Specify the path to the brittany executable (for example if you installed brittany with `stack build --copy-compiler-tool brittany`)
 
 ```vim
-g:hindent_command = "stack exec -- hindent"
+g:brittany_command = "stack exec -- brittany"
 ```
+
+## Credits
+
+Credit for this goes to alx741, as this is essentially a search-and-replace of
+[vim-hindent](https://github.com/alx741/vim-hindent).
